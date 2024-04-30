@@ -1,8 +1,13 @@
-export default function ToDoItem({ data }) {
+export default function ToDoItem({ data, completeTask }) {
     return (
-        <li className="to-do-item">
-            <span>{data}</span>
-            <input type="checkbox" />
+        <li onClick={completeTask} className="to-do-item">
+            <span
+                style={{
+                    textDecoration: data.isCompleted ? "line-through" : "none",
+                }}
+            >
+                {data.value}
+            </span>
         </li>
     );
 }

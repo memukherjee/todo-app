@@ -25,6 +25,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 }
 
 .empty-list-item {
@@ -33,7 +34,7 @@ body {
     margin-bottom: 1rem;
 }
 
-.empty-button {
+.clear-button {
     width: 100%;
     max-width: calc(var(--list-width) - 1rem);
     border: 2px solid #fff;
@@ -46,12 +47,12 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-.empty-button:hover {
+.clear-button:hover {
     background-color: #ffffff50;
     color: #222;
 }
 
-.empty-button:disabled {
+.clear-button:disabled {
     border-color: #ffffff50;
     background-color: #ffffff50;
     color: #ffffff;
