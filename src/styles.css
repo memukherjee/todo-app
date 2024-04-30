@@ -1,4 +1,24 @@
-.Application {
-  font-family: sans-serif;
-  text-align: center;
+body {
+    font-family: sans-serif;
+    text-align: center;
+    background-color: #222;
+    color: #fff;
+}
+
+.to-do-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: start;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.to-do-item {
+    margin-bottom: 10px;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+    background-color: #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
