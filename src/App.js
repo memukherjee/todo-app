@@ -1,10 +1,11 @@
 import "./styles.css";
+import Header from "./component/Header";
 
 export default function App() {
   return (
     <div className="Application">
-      <h1>Aye Captain! 🫡</h1>
-      <h2>Lets create something!</h2>
+      <Header />
+      <h2>Nothing to do buddy. Sleep!!</h2>
     </div>
   );
 }
