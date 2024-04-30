@@ -1,12 +1,13 @@
-export default function ToDoItem({ data, completeTask }) {
+export default function ToDoItem({ taskData, completeTask }) {
+    const { value, isCompleted } = taskData;
     return (
         <li onClick={completeTask} className="to-do-item">
             <span
                 style={{
-                    textDecoration: data.isCompleted ? "line-through" : "none",
+                    textDecoration: isCompleted ? "line-through" : "none",
                 }}
             >
-                {data.value}
+                {value}
             </span>
         </li>
     );

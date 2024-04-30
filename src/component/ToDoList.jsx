@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ToDoItem from "./ToDoItem";
+import ClearButton from "./ClearButton";
 
 export default function ToDoList() {
     const initialTasks = [
@@ -19,14 +20,6 @@ export default function ToDoList() {
         newTasks[index].isCompleted = !newTasks[index].isCompleted;
         setTasks(newTasks);
     };
-    const clearCompletedTasks = () => {
-        const incompleteTasks = tasks.filter((task) => !task.isCompleted);
-        setTasks(incompleteTasks);
-    };
-    const clearToDoList = () => {
-        setTasks([]);
-    };
-    const isAnyTaskCompleted = tasks.some((task) => task.isCompleted);
     return (
         <>
             <ul className="to-do-list">
@@ -38,21 +31,12 @@ export default function ToDoList() {
                 {tasks.map((task, index) => (
                     <ToDoItem
                         key={index}
-                        data={task}
+                        taskData={task}
                         completeTask={() => completeTask(index)}
                     />
                 ))}
             </ul>
-            <button
-                type="button"
-                className="clear-button"
-                onClick={
-                    isAnyTaskCompleted ? clearCompletedTasks : clearToDoList
-                }
-                disabled={tasks.length === 0}
-            >
-                {isAnyTaskCompleted ? "Remove Completed" : "Empty"}
-            </button>
+            <ClearButton tasks={tasks} setTasks={setTasks} />
         </>
     );
 }
